@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahek Fashion – Trendy Looks Under Budget</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <a class="logo" href="#">
+          <img src="logo.jpg" alt="Mahek Fashion logo" class="logo-img" />
+          <span>Mahek<span>Fashion</span></span>
+        </a>
+        <nav class="nav">
+          <a href="#new-arrivals">New Arrivals</a>
+          <a href="#trending">Trending</a>
+          <a href="#offers">Daily Offers</a>
+          <a href="#faqs">FAQs</a>
+          <a href="#branches">Branches</a>
+          <a href="#visit">Visit Us</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn" aria-label="Search" id="search-toggle">
+            🔍
+          </button>
+        </div>
+        <button class="menu-toggle" aria-label="Open navigation">
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <div class="search-bar" id="search-bar">
+      <div class="container search-bar-inner">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search outfits, e.g. “hoodie”, “street”, “linen”"
+          autocomplete="off"
+        />
+        <button class="ghost-btn small-btn" id="search-clear" aria-label="Clear search">
+          ✕
+        </button>
+      </div>
+      <p class="search-hint">Typos are auto-corrected. Showing closest matches.</p>
+    </div>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <p class="eyebrow">Under-Budget, Over-Stylish</p>
+            <h1>Trending fashion that your wallet will love.</h1>
+            <p class="subtitle">
+              Discover curated looks, hand‑picked every day. Every standalone piece is just
+              ₹500 and you can mix any 3 for ₹1,200.
+            </p>
+            <div class="hero-cta">
+              <button class="btn primary" id="shop-now-btn">Shop Trending</button>
+              <button class="btn ghost" id="today-offer-btn">View Today’s Offer</button>
+            </div>
+            <div class="hero-meta">
+              <div>
+                <span class="stat">₹500</span>
+                <span class="stat-label">Avg. look price</span>
+              </div>
+              <div>
+                <span class="stat">500+</span>
+                <span class="stat-label">Styles this month</span>
+              </div>
+              <div>
+                <span class="stat">24/7</span>
+                <span class="stat-label">Support</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-showcase">
+            <div class="showcase-card main">
+              <div class="badge">Today’s Pick</div>
+              <div class="showcase-image gradient-bg">
+                <img
+                  src="cloths/Streetwear Essentials.png"
+                  alt="Streetwear Essentials outfit"
+                  loading="lazy"
+                />
+              </div>
+              <div class="showcase-info">
+                <h3>Streetwear Essentials</h3>
+                <p>Oversized tee + cargos + hoodie. All pieces at ₹500.</p>
+                <div class="price-line">
+                  <span class="price">₹500 each</span>
+                  <span class="price-old">₹899</span>
+                  <span class="discount">Buy 3 @ ₹1,200</span>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-grid">
+              <div class="mini-card">
+                <span class="mini-label">For Him</span>
+                <p>Smart casuals starting at ₹699</p>
+              </div>
+              <div class="mini-card">
+                <span class="mini-label">For Her</span>
+                <p>Brunch looks under ₹999</p>
+              </div>
+              <div class="mini-card">
+                <span class="mini-label">College Fits</span>
+                <p>Daily wear under ₹599</p>
+              </div>
+              <div class="mini-card">
+                <span class="mini-label">Party Night</span>
+                <p>Statement outfits from ₹1,199</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section filters-section" id="filters">
+        <div class="container">
+          <div class="section-header">
+            <h2>Shop by budget & vibe</h2>
+            <p>Set your budget and mood. We’ll show you what’s trending right now.</p>
+          </div>
+          <div class="filters-bar">
+            <div class="filter-group">
+              <label for="budget-range">Max budget (₹)</label>
+              <div class="range-wrapper">
+                <input
+                  type="range"
+                  id="budget-range"
+                  min="499"
+                  max="2999"
+                  step="100"
+                  value="1499"
+                />
+                <span id="budget-value">₹1,499</span>
+              </div>
+            </div>
+            <div class="filter-group">
+              <label for="category-select">Category</label>
+              <select id="category-select">
+                <option value="all">All</option>
+                <option value="men">Men</option>
+                <option value="women">Women</option>
+                <option value="unisex">Unisex</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="vibe-select">Vibe</label>
+              <select id="vibe-select">
+                <option value="all">Any</option>
+                <option value="casual">Casual</option>
+                <option value="street">Street</option>
+                <option value="formal">Formal</option>
+                <option value="party">Party</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="new-arrivals">
+        <div class="container">
+          <div class="section-header">
+            <h2>New Arrivals</h2>
+            <p>Fresh drops updated daily. Get them before they’re gone.</p>
+          </div>
+          <div class="bulk-banner">
+            <strong>Studio Deal:</strong> Every style is ₹500. Mix any 3 and pay only ₹1,200.
+          </div>
+          <p class="size-note">
+            Sizes stocked daily: <span>S</span> / <span>M</span> / <span>L</span> /
+            <span>XL</span>. Ask our stylists for the best fit.
+          </p>
+          <div class="products-grid" id="products-grid">
+            <!-- Products injected by JS -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="trending">
+        <div class="container">
+          <div class="section-header">
+            <h2>Trending Now</h2>
+            <p>Most loved looks by our community this week.</p>
+          </div>
+          <div class="trending-strip" id="trending-strip">
+            <!-- Trending items injected by JS -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section offers-section" id="offers">
+        <div class="container">
+          <div class="section-header">
+            <h2>Today’s Smart Offers</h2>
+            <p>Daily auto‑refreshed offers picked just for budget shoppers.</p>
+          </div>
+          <div class="offers-layout">
+            <div class="offer-main" id="main-offer">
+              <!-- Main daily offer filled by JS -->
+            </div>
+            <aside class="offer-side">
+              <h3>Upcoming Deals</h3>
+              <ul id="upcoming-offers">
+                <!-- Upcoming offers filled by JS -->
+              </ul>
+              <p class="offer-note">
+                Offers refresh every 24 hours. Turn on notifications to never miss a drop.
+              </p>
+              <button class="btn secondary" id="remind-me-btn">
+                Remind me about offers
+              </button>
+              <p class="tiny-text" id="remind-status"></p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="faqs">
+        <div class="container">
+          <div class="section-header">
+            <h2>General FAQs</h2>
+            <p>
+              Quick answers to the questions shoppers ask the most. Need more help? Drop us
+              a WhatsApp and we’ll guide you in real time.
+            </p>
+          </div>
+          <div class="faq-grid">
+            <article class="faq-card" id="returns">
+              <h3>Do you offer refunds?</h3>
+              <p>
+                We don’t issue cash refunds. If anything doesn’t fit or has a defect,
+                bring it back within 7 days with your bill and we’ll replace it with a
+                fresh piece of your choice.
+              </p>
+            </article>
+            <article class="faq-card">
+              <h3>How does the ₹1,200 trio work?</h3>
+              <p>
+                Every individual item is ₹500. When you pick any three tops or bottoms in a
+                single visit, the bundle auto-adjusts to ₹1,200 at billing. Mix fabrics,
+                fits, and colors freely.
+              </p>
+            </article>
+            <article class="faq-card">
+              <h3>Do you ship outside Surat?</h3>
+              <p>
+                At the moment Mahek Fashion focuses on in-store styling. You can reserve a
+                piece on WhatsApp and pick it up from the branch you choose the same day.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section branches-section" id="branches">
+        <div class="container">
+          <div class="section-header">
+            <h2>Quality Clothing at Prices You’ll Love</h2>
+            <p>
+              Three Mahek Fashion destinations across Surat keep premium looks close to you.
+              Walk in, feel the fabrics, and let our stylists guide you.
+            </p>
+          </div>
+          <div class="branches-grid" id="branches-grid"></div>
+        </div>
+      </section>
+
+      <section class="section location-section" id="visit">
+        <div class="container location-grid">
+          <div>
+            <h2>Plan your visit</h2>
+            <p id="branch-tagline">
+              Drop by the Mahek Fashion studio in Surat to try outfits in person. Our
+              stylists will help you mix-and-match looks that fit your vibe and budget.
+            </p>
+            <div class="branch-selector">
+              <label for="branch-select">Choose your branch</label>
+              <select id="branch-select"></select>
+            </div>
+            <ul class="location-details">
+              <li>
+                <strong>Branch:</strong> <span id="branch-name">Main Branch</span>
+              </li>
+              <li>
+                <strong>Address:</strong>
+                <span id="branch-address"
+                  >Shop No. 1, Madina Masjid Rd, near Madina Masjid, Railway Colony, Udhana,
+                  Surat, Gujarat 395012</span
+                >
+              </li>
+              <li><strong>Hours:</strong> Mon–Sat, 10:00 AM – 9:00 PM</li>
+              <li><strong>Phone:</strong> <span id="branch-phone">+91-79903-91274</span></li>
+            </ul>
+            <p class="tiny-text">
+              Tap the map to open Google Maps directions straight to our door.
+            </p>
+          </div>
+          <div class="map-wrapper">
+            <iframe
+              id="branch-map"
+              title="Mahek Fashion location"
+              src="https://www.google.com/maps?q=Shop+No+1+Madina,+Masjid+Rd,+near+Madina+masjid,+Udhana,+Railway+Colony,+Udhana,+Surat,+Gujarat+395012&output=embed"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <a
+              class="map-overlay"
+              id="map-overlay-link"
+              href="https://www.google.com/maps/dir/?api=1&destination=Shop+No+1+Madina,+Masjid+Rd,+near+Madina+masjid,+Udhana,+Railway+Colony,+Udhana,+Surat,+Gujarat+395012"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open directions to Mahek Fashion in Google Maps"
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section newsletter-section">
+        <div class="container newsletter-card">
+          <div>
+            <h2>Stay ahead of the trend curve</h2>
+            <p>
+              Get a curated list of under‑budget outfits, price drops, and exclusive codes
+              in your inbox.
+            </p>
+          </div>
+          <form class="newsletter-form" id="newsletter-form">
+            <input
+              type="email"
+              id="newsletter-email"
+              placeholder="Enter your email"
+              required
+            />
+            <button class="btn primary" type="submit">Get daily drops</button>
+          </form>
+          <p class="tiny-text" id="newsletter-status"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="container footer-inner">
+        <div>
+          <a class="logo" href="#">
+            <img src="logo.jpg" alt="Mahek Fashion logo" class="logo-img" />
+            <span>Mahek<span>Fashion</span></span>
+          </a>
+          <p class="footer-text">
+            Your everyday fashion destination for looks that feel premium but stay
+            pocket‑friendly.
+          </p>
+        </div>
+        <div class="footer-grid">
+          <div>
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="#new-arrivals">New arrivals</a></li>
+              <li><a href="#trending">Trending</a></li>
+              <li><a href="#offers">Daily offers</a></li>
+              <li><a href="#visit">Visit us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#faqs">FAQs</a></li>
+              <li><a href="#returns">Returns & replacements</a></li>
+              <li><a href="#faqs">Size guide</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li>WhatsApp: +91-77779-93391</li>
+              <li>Instagram: @mahek_fashion_</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Mahek Fashion. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+

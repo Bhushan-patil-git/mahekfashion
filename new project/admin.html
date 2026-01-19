@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahek Fashion – Admin Panel</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div>
+          <p class="eyebrow">Patel Mauddin workspace</p>
+          <h1>Mahek Fashion Control Center</h1>
+          <p class="muted">Manage products, offers, and see visitor insights.</p>
+        </div>
+        <a class="link" href="index.html">← Back to website</a>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="card">
+        <div class="card-head">
+          <div>
+            <p class="eyebrow">Live signals</p>
+            <h2>Visitor & engagement</h2>
+          </div>
+          <button id="reset-analytics" class="ghost-btn">Reset analytics</button>
+        </div>
+        <div class="stats-grid">
+          <div class="stat">
+            <p class="label">Site visits</p>
+            <p class="value" id="visit-count">0</p>
+          </div>
+          <div class="stat">
+            <p class="label">Total product touches</p>
+            <p class="value" id="touch-count">0</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <h3 class="table-title">Most touched products</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Touches</th>
+              </tr>
+            </thead>
+            <tbody id="touches-table"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <div>
+            <p class="eyebrow">Catalog</p>
+            <h2>Products (CRUD)</h2>
+          </div>
+          <div class="actions">
+            <button id="reset-products" class="ghost-btn">Reset to defaults</button>
+            <button id="clear-products" class="ghost-btn danger">Clear all</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Old price</th>
+                <th>Category</th>
+                <th>Vibe</th>
+                <th>Image</th>
+                <th>Tags</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="products-table"></tbody>
+          </table>
+        </div>
+
+        <form id="product-form" class="form">
+          <input type="hidden" id="product-id" />
+          <div class="form-grid">
+            <label>
+              Name
+              <input type="text" id="product-name" required />
+            </label>
+            <label>
+              Price (₹)
+              <input type="number" id="product-price" required min="1" />
+            </label>
+            <label>
+              Old price (₹)
+              <input type="number" id="product-old-price" required min="1" />
+            </label>
+            <label>
+              Category
+              <select id="product-category">
+                <option value="men">Men</option>
+                <option value="women">Women</option>
+                <option value="unisex" selected>Unisex</option>
+              </select>
+            </label>
+            <label>
+              Vibe
+              <select id="product-vibe">
+                <option value="casual">Casual</option>
+                <option value="street">Street</option>
+                <option value="formal">Formal</option>
+                <option value="party">Party</option>
+                <option value="smart">Smart</option>
+                <option value="fusion">Fusion</option>
+              </select>
+            </label>
+            <label>
+              Tags (comma separated)
+              <input type="text" id="product-tags" placeholder="Hoodie, Layer" />
+            </label>
+            <label>
+              Image (upload or paste URL)
+              <input type="file" id="product-image-file" accept="image/*" />
+              <input
+                type="text"
+                id="product-image"
+                placeholder="Or paste an image URL"
+              />
+              <span class="help">Uploaded images are stored in this browser only.</span>
+            </label>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="primary-btn" id="product-submit">Save product</button>
+            <button type="button" class="ghost-btn" id="product-cancel">Clear form</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <div>
+            <p class="eyebrow">Deals</p>
+            <h2>Offers (CRUD)</h2>
+          </div>
+          <div class="actions">
+            <button id="reset-offers" class="ghost-btn">Reset to defaults</button>
+            <button id="clear-offers" class="ghost-btn danger">Clear all</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Old price</th>
+                <th>Code</th>
+                <th>Extra</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="offers-table"></tbody>
+          </table>
+        </div>
+
+        <form id="offer-form" class="form">
+          <input type="hidden" id="offer-index" />
+          <div class="form-grid">
+            <label>
+              Title
+              <input type="text" id="offer-title" required />
+            </label>
+            <label>
+              Description
+              <input type="text" id="offer-desc" required />
+            </label>
+            <label>
+              Price (₹)
+              <input type="number" id="offer-price" required min="1" />
+            </label>
+            <label>
+              Old price (₹)
+              <input type="number" id="offer-old-price" required min="1" />
+            </label>
+            <label>
+              Code
+              <input type="text" id="offer-code" required />
+            </label>
+            <label>
+              Extra
+              <input type="text" id="offer-extra" placeholder="Stacks with bulk deal" />
+            </label>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="primary-btn" id="offer-submit">Save offer</button>
+            <button type="button" class="ghost-btn" id="offer-cancel">Clear form</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
+
